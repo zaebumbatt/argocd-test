@@ -12,3 +12,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: argo-test
+
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
