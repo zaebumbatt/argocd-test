@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: argo-test-application
-        image: nanajanashia/argocd-app:1.2
+        image: nanajanashia/argocd-app:1.3
         ports:
         - containerPort: 8080
