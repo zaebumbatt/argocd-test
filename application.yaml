@@ -3,6 +3,14 @@ kind: Application
 metadata:
   name: argo-test-application
   namespace: argocd
+
+  annotations:
+    notifications.argoproj.io/subscribe.on-deployed.grafana: argo-test-application-deployment
+    notifications.argoproj.io/subscribe.on-health-degraded.grafana: argo-test-application-degraded
+    notifications.argoproj.io/subscribe.on-sync-failed.grafana: argo-test-application-sync-failed
+    notifications.argoproj.io/subscribe.on-sync-status-unknown.grafana: argo-test-application-status-unknown
+    notifications.argoproj.io/subscribe.on-sync-succeeded.grafana: argo-test-application-sync-succeeded
+
 spec:
   project: default
   source:
