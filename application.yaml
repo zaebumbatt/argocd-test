@@ -5,15 +5,10 @@ metadata:
   namespace: argocd
 spec:
   project: default
-
   source:
-    repoURL: https://github.com/zaebumbatt/argocd-test
+    repoURL: https://github.com/zaebumbatt/argocd-test.git
     targetRevision: HEAD
     path: main
   destination:
     server: https://kubernetes.default.svc
     namespace: argo-test
-  
-  syncPolicy:
-    syncOptions:
-    - CreateNamespace=true
