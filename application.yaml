@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argo-test-application
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/zaebumbatt/argocd-test
+    targetRevision: HEAD
+    path: main
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argo-test
+  
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
